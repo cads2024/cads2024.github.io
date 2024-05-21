@@ -282,7 +282,7 @@
         </h3>
 
         <br><br>
-        <h2><b>TL; DR: Consistent depth estimation w.r.t the 3D scene where given a stream of images exist</b></h2>
+        <h2><b>TL; DR: Consistent dense depth estimation w.r.t the 3D scene where given a stream of images exist</b></h2>
     </center>
 
     <br><br>
@@ -301,23 +301,23 @@
                     We are interested in achieving spatially accurate and 
                     temporally consistent absolute depth estimates only from a stream of 2D RGB images.
                     Despite the success of recent depth estimation methods, 
-                    we find that our goal remains challenging with existing approaches, 
-                    this is because they still operate in 2D-pixel space or struggle to encode entire scenes,
-                    thus limiting their use in various real-world captures.
-                    To address this, we propose a new paradigm, which casts the depth estimation 
-                    as a feature synthesis problem in 3D space.
+                    we find that the task remains challenging with existing approaches. 
+                    This is because they still operate in 2D-pixel space or struggle to encode entire scenes, 
+                    thus limiting their use in various real-world captures of complex scenes.
+                    To address this, we propose a new paradigm, 
+                    which casts depth estimation as a feature synthesis problem in 3D space.
                     Specifically, we first construct scene features with twofold rescaling, 
                     minimizing scale ambiguity and enhancing consistency between context features.
-                    Then, using enriched scene features, we perform feature matching directly in 3D 
-                    with our new transformer architecture, which includes three-way factorized attention 
-                    facilitating geometric locality.
+                    Then, using enriched scene features, 
+                    we perform feature matching directly in 3D with our new transformer architecture, 
+                    which includes three-way factorized attention facilitating geometric locality.
                     Moreover, to avoid reliance on explicit geometry modeling, 
                     we render depth maps using ordinal rendering that respects the nature of 3D spaces.
-                    We perform extensive comparisons on casually captured scenes 
-                    from various real-world datasets and significantly outperform previous work.
-                    Results highlight our method as a novel framework for consistent absolute depth estimation 
-                    that synthesizes the 3D worlds existing in given images.
-
+                    We perform extensive comparisons on casually captured scenes from various real-world datasets 
+                    and significantly outperform previous work.
+                    Results highlight our method as a novel framework for 
+                    consistent dense depth estimation at arbitrary camera angles 
+                    by imagining the 3D worlds existing in given images.
                 </td>
             </tr>
         </table>
@@ -340,21 +340,21 @@
             <table align=center width=1500px>
                 <tr>
                     <td style="text-align:justify;">
-                        CADS synthesizes a depth map and corresponding RGB image at <em>arbitrary camera
+                        CADS synthesizes a dense depth map and corresponding RGB image at <em>arbitrary camera
                             angles</em> using a stream of 2D RGB images as context features.
                         Such an accurate depth prediction is enabled by three main components.
                         First, CADS rescales each depth estimate of the context views obtained from the
-                        monocular depth estimation network to make them exist in the 3D world
+                        single-image depth estimation network to make them exist in the 3D world
                         in which the scene exists and ensure consistency between individually obtained estimates,
                         thus enabling geometric priors during feature matching in the next phase.
                         Then, these rescaled depth features with image features are fed into our three-way factorized
                         transformers
-                        that decompose the features along view, ray, and pixel to efficiently find the correspondence
+                        that decompose the features along view, ray, and patch to efficiently find the correspondence
                         between the context features.
-                        Finally, CADS renders a depth map without explicit proxy geometry by taking into
+                        Finally, CADS renders a dense depth map without explicit proxy geometry by taking into
                         account the sequential nature of a ray.
                         By doing so, CADS successfully imagines spatially accurate and temporally consistent
-                        depth maps that respect the 3D world in which the given images reside.
+                        dense depth maps that respect the 3D world in which the given images reside.
 
                     </td>
                 </tr>
