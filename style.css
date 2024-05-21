@@ -1,0 +1,630 @@
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: #fff;
+    font-family: 'Open Sans',sans-serif;
+    color: #333;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.section {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.container {
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+}
+
+
+
+.video-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px;
+}
+
+
+.video-container {
+    position: relative;
+}
+
+.video-teaser-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.video-teaser-container video {
+    margin-right: 20px; /* Adjust the value as needed */
+}
+
+
+.caption {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(119, 119, 119, 0.7);
+    color: rgb(255, 251, 251);
+    width: 40%;
+    padding: 1px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+
+.caption-teaser {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(82, 82, 82, 0.7);
+    color: rgb(255, 251, 251);
+    width: 80%;
+    padding: 3.5px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+
+
+
+
+.thumbnails {
+    width: 60%;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.thumbnail-btn {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #fff;
+    padding-bottom: 8px;
+    border-radius: 10px;
+}
+
+
+.active-btn   {
+    background-color: #d9e8ec;
+}
+
+.thumbnail-container {
+    text-align: center;
+}
+
+
+.video-comp-container {
+    width: 80%;
+    height: auto;  /* You can set a specific height or use a percentage if you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;  /* adjust padding as needed */
+    margin: 0 auto; /* centers the container and removes vertical margins */
+}
+
+:root {
+    --opacity: 50;
+}
+
+#canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videos {
+    visibility: hidden;
+    position: absolute;
+    width: 1%;
+}
+
+#opacity {
+    font-family: 'Open Sans',sans-serif;
+    color: #3c3c3c;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.viewer-bar {
+    width: 33.3333%;
+}
+
+
+
+
+
+.video-text {
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+    /* font-family: serif; */
+}
+
+.overlay-text {
+    background-color: #fefefe70;
+    font-size: 22px;
+    color: rgb(63, 63, 63);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+@media screen and (max-width: 550px) {
+    .title {
+        font-size: 24px;
+        line-height: 20px;
+    }
+
+    .subheader {
+        font-size: 16px;
+    }
+
+    .author-text {
+        font-size: 12px;
+    }
+
+    .author-row {
+        height: 35px;
+    }
+
+    #pipeline-img {
+        width: 90%;
+        max-width: 560px;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+
+    .thumbnail-btn {
+        font-size: 8px;
+    }
+
+    .thumbnails {
+        width: 100%;
+        max-height: 20px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    .section-header {
+        font-size: 20px;
+        line-height: 20px;
+
+}
+}
+
+
+
+.docs-section {
+    /* border-top: 1px solid #eee; */
+    padding: 2rem 0;
+    margin-bottom: 0;
+    border-bottom: None
+    /* border-bottom: None 1px solid rgb(126, 126, 126); */
+}
+
+
+
+/* Larger than phone */
+@media (min-width: 550px) {
+    .header {
+      margin-top: 5rem; }
+  }
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    /* Navbar */
+    .navbar + .docs-section {
+      border-top-width: 0;
+    }
+    .navbar,
+    .navbar-spacer {
+      display: flex;
+      justify-content: center; /* Center the navbar horizontally */
+      align-items: center; /* Center the navbar vertically */
+      width: 100%;
+      height: 6.5rem;
+      background: rgb(255, 255, 255);
+      z-index: 99;
+      border-top: 1px solid rgb(255, 255, 255);
+      border-bottom: none; /* Remove the border-bottom */
+    }
+    .navbar-spacer .navbar-item {
+      display: flex;
+      align-items: center;
+    }
+  
+    .navbar > .container {
+      display: flex;
+      justify-content: center; /* Center the navbar horizontally */
+      align-items: center; /* Center the navbar vertically */
+      width: 100%;
+      max-width: 940px;
+    }
+    .navbar-list {
+      list-style: none;
+      display: flex; /* Display the items horizontally */
+      justify-content: center; /* Distribute items with equal space between */
+      align-items: center; /* Center the items vertically */
+      flex-wrap: nowrap; /* Prevent items from wrapping */
+    }
+    .navbar-item {
+      margin-bottom: 0;
+    }
+    .navbar-link {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 14px; /* Adjust the font size to your desired value */
+      font-weight: 700;
+      letter-spacing: .2rem;
+      text-decoration: none;
+      padding: 10px 20px; /* Add padding to create button-like appearance */
+      color: #000; /* Text color */
+      background-color: #f0f0f0; /* Background color  c9d3f9 */
+      border: none; /* Remove border */
+      border-radius: 15px; /* Adjust the border radius for rounded shape */
+      transition: background-color 0.3s ease; /* Add transition for hover effect */
+      margin: 0 70px; /* Add spacing on the left and right */
+    }
+    .navbar-link.active {
+      color: #33C3F0;
+    }
+    .navbar-link:nth-child(2) {
+      margin: 0 auto; /* Center the second item */
+    }
+    .has-docked-nav .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .has-docked-nav .navbar-spacer {
+      display: block;
+    }
+  }
+  
+  .nav_container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+  }
+  
+  
+
+  
+figure.zoom {
+    background-position: 50% 50%;
+    position: relative;
+    width: 500px;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+
+figure.zoom img {
+    transition: opacity .5s;
+    display: block;
+    width: 100%;
+  }
+
+
+.gallery {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gallery-thumbnail-row {
+    display: inline-block;
+    width: 40%;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+.caption-gallery {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(119, 119, 119, 0.7);
+    color: rgb(255, 251, 251);
+    width: 40%;
+    padding: 1px;
+    box-sizing: border-box;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.short-line {
+    width: 85%; /* Adjust the width as needed */
+    height: 1px; /* Adjust the thickness as needed */
+    margin: 10px auto; /* Adjust the margin as needed */
+    background: linear-gradient(to left, transparent, black, transparent);
+  }
+
+
+.navbar-heading {
+    background-color: #d6e2f6; /*  #f0f0f0; Adjust the color as needed */
+    color: rgb(0, 0, 0); /* Adjust the text color as needed */
+    padding: 40px; /* Adjust the padding as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+#more-video {
+    width: 100%;
+    height: auto;  /* This will keep the video aspect ratio */
+    margin: 0;
+    border-radius: 0px;
+}
+
+.video-container {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;  /* centering the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-mochi-container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caption-video {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 75%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+#mochi-video {
+    width: 70%;
+    height: auto;
+}
+
+.caption-mochi {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 40%;
+    padding: 1px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+
+.video-person-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.video-person-container-smaller {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+.person-video {
+    flex: 1 1 auto;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person-video-smaller {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person-video video {
+    width: 100%;
+}
+
+.person-video p {
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 75%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.person-video-smaller p {
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 80%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.person-video-smaller video {
+    max-width: 100%; /* Set a maximum width to ensure the video fits within its container */
+    height: auto; /* Allow the height to adjust proportionally based on the width */
+}
+
+.video-caption-container p {
+    margin: 0 10px;
+}
+
+.video-caption-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    text-align: center; /* Center text horizontally */
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+.captionn {
+    margin: 10px 0 0; /* Adjust margin between videos and caption */
+}
+
+.caption-person {
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(72, 72, 72, 0.7);
+    color: rgb(255, 251, 251);
+    width: 80%;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 40px;
+}
+
+
+  /* .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%; 
+    height: 0;
+    padding-bottom: 50%;
+    overflow: hidden; 
+}
+
+.displayedImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} 
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%; 
+    height:0;
+    overflow: hidden; 
+}
+
+.displayedImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 500px; 
+} */
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Adjust as needed */
+    height: auto;
+    overflow: hidden;
+}
+
+.displayedImage {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.comp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    height: 40vh;
+    /* height: auto; */
+    margin: 0px; 
+    padding: 0px; 
+    overflow: hidden; 
+}
+
+.compImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+
+
+/* .displayedImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+    max-width: 100%;
+} */
+
+
+

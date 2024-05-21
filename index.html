@@ -1,0 +1,676 @@
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+<script src="index.js" type="text/javascript"></script>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+    rel='stylesheet' type='text/css'>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+</style>
+
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif,
+            "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Changa One:400,400italic", "Varela Round:400";
+        font-weight: 300;
+        font-size: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1600px;
+        color: #666;
+    }
+
+    h1 {
+        color: #000;
+        font-size: 40px;
+        font-weight: 300;
+    }
+
+    h2 {
+        color: #444;
+        font-size: 35px;
+        font-weight: 300;
+    }
+
+    h3 {
+        color: #444;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+    a:link,
+    a:visited {
+        color: #1367a7;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+
+    table td {
+        font-size: 24px;
+        line-height: 1.15em;
+    }
+
+    .layered-paper-big {
+        /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+            0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The top layer shadow */
+            5px 5px 0 0px #fff,
+            /* The second layer */
+            5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The second layer shadow */
+            10px 10px 0 0px #fff,
+            /* The third layer */
+            10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The third layer shadow */
+            15px 15px 0 0px #fff,
+            /* The fourth layer */
+            15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The fourth layer shadow */
+            20px 20px 0 0px #fff,
+            /* The fifth layer */
+            20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The fifth layer shadow */
+            25px 25px 0 0px #fff,
+            /* The fifth layer */
+            25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+        /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+    .paper-big {
+        /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+            0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+        /* The top layer shadow */
+
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper {
+        /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+            0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The top layer shadow */
+            5px 5px 0 0px #fff,
+            /* The second layer */
+            5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+            /* The second layer shadow */
+            10px 10px 0 0px #fff,
+            /* The third layer */
+            10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+        /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        /* background-color: #68a4fd;
+		color: #ecf0f1 !important; */
+        /* background-color: #ffffff; */
+        color: #3b66a7 !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .venue {
+        color: #1367a7;
+    }
+
+    sup {
+        font-size: smaller;
+        /* Adjust the font size to make it smaller */
+        vertical-align: top;
+        /* Align the text with the top of the surrounding text */
+    }
+</style>
+
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title style="">Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D</title>
+    <meta property="og:image" content="resources/overview.png" />
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+    <!-- <meta property="og:video" content="resources/video/teaser/teaser.mp4"> -->
+    <meta property="og:title"
+        content="Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D" />
+    <meta property="og:description"
+        content="Consistent depth estimation w.r.t the 3D scene where given a stream of images exist" />
+
+    <!-- Get from Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src=""></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-75863369-6');
+    </script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <center>
+        <span style="font-size:40px; color:#000;" width=1500px>
+            <b>
+                Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D
+            </b>
+        </span>
+
+
+        <br>
+
+    </center>
+
+
+    <br><br><br><br>
+    <center>
+        <h3><b>Note:</b> If some visuals are not displaying correctly, please try refreshing the page
+            <br><br><br>
+            Best viewed on a monitor and with a Chrome browser
+        </h3>
+
+        <br><br>
+        <h2><b>TL; DR: Consistent depth estimation w.r.t the 3D scene where given a stream of images exist</b></h2>
+    </center>
+
+    <br><br>
+    <hr>
+    <br><br>
+
+    <div class="docs-section" id="abstract">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Abstract</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    We are interested in achieving spatially accurate and 
+                    temporally consistent absolute depth estimates only from a stream of 2D RGB images.
+                    Despite the success of recent depth estimation methods, 
+                    we find that our goal remains challenging with existing approaches, 
+                    this is because they still operate in 2D-pixel space or struggle to encode entire scenes,
+                    thus limiting their use in various real-world captures.
+                    To address this, we propose a new paradigm, which casts the depth estimation 
+                    as a feature synthesis problem in 3D space.
+                    Specifically, we first construct scene features with twofold rescaling, 
+                    minimizing scale ambiguity and enhancing consistency between context features.
+                    Then, using enriched scene features, we perform feature matching directly in 3D 
+                    with our new transformer architecture, which includes three-way factorized attention 
+                    facilitating geometric locality.
+                    Moreover, to avoid reliance on explicit geometry modeling, 
+                    we render depth maps using ordinal rendering that respects the nature of 3D spaces.
+                    We perform extensive comparisons on casually captured scenes 
+                    from various real-world datasets and significantly outperform previous work.
+                    Results highlight our method as a novel framework for consistent absolute depth estimation 
+                    that synthesizes the 3D worlds existing in given images.
+
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+        <br>
+
+
+        <center>
+            <h1 class="navbar-heading"> <b>Overview</b></h1>
+        </center>
+
+        <center>
+
+            <div class="video-comp-container">
+                <img id="overview" src="resources/overview.gif" width="1500">
+            </div>
+
+            <table align=center width=1500px>
+                <tr>
+                    <td style="text-align:justify;">
+                        CADS synthesizes a depth map and corresponding RGB image at <em>arbitrary camera
+                            angles</em> using a stream of 2D RGB images as context features.
+                        Such an accurate depth prediction is enabled by three main components.
+                        First, CADS rescales each depth estimate of the context views obtained from the
+                        monocular depth estimation network to make them exist in the 3D world
+                        in which the scene exists and ensure consistency between individually obtained estimates,
+                        thus enabling geometric priors during feature matching in the next phase.
+                        Then, these rescaled depth features with image features are fed into our three-way factorized
+                        transformers
+                        that decompose the features along view, ray, and pixel to efficiently find the correspondence
+                        between the context features.
+                        Finally, CADS renders a depth map without explicit proxy geometry by taking into
+                        account the sequential nature of a ray.
+                        By doing so, CADS successfully imagines spatially accurate and temporally consistent
+                        depth maps that respect the 3D world in which the given images reside.
+
+                    </td>
+                </tr>
+            </table>
+
+
+        </center>
+
+    </div>
+
+    <br><br>
+
+
+    <div class="docs-section" id="mde">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Metric Depth Estimation with Mobile Phone Captures</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    Illustration of depth estimates with corresponding synthesized RGB images on mochi-high-five
+                    sequence on the iPhone dataset.
+                    The color bar on the right is in meters (m).
+                    CADS depth consistently over the video,
+                    while accurately estimating metric depth.
+                    <a href="https://arxiv.org/abs/2302.12288">ZoeDepth</a>, on the other hand, overestimates depth,
+                    with its estimates fluctuating over time, as shown by the different colors.
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <div class="video-person-container">
+
+            <div class="person-video">
+                <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/mochi/source.mp4"></video>
+                <p><b>Ground-Truth</b></p>
+            </div>
+
+            <div class="person-video">
+                <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/mochi/pred.mp4"></video>
+                <p><b>CADS (Ours)</b></p>
+            </div>
+
+            <div class="person-video">
+                <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/mochi/gt_mochi.mp4"></video>
+                <p><b>iPhone Lidar Sensor</b></p>
+            </div>
+
+            <div class="person-video">
+                <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/mochi/zoe_mochi.mp4"></video>
+                <p><b>ZoeDepth</b></p>
+            </div>
+
+            <div class="person-video">
+                <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/mochi/ours_mochi.mp4"></video>
+                <p><b>CADS (Ours)</b></p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <br><br>
+
+    <!-- <div class="docs-section" id="sde">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Scaled Depth Estimation for SfM Reconstruction</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    Illustration of depth estimates and the corresponding synthesized RGB images.
+                    CADSrenders a spatially accurate depth map while capturing thin structures,
+                    e.g., wire and radiator (upper) and chair legs (bottom),
+                    which is often missing even with Ground Truth obtained with lidar sensors.
+                    In addition, CADS synthesizes deblurred color images for a target view
+                    by aggregating features from context views.
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <center>
+            <div class="video-container">
+                <video id="more-video" autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                    src="resources/t23d.mp4">
+                    <source id="more-video" src="resources/t23d.mp4" type="video/mp4">
+                </video>
+            </div>
+        </center>
+
+    </div> -->
+
+    <br><br>
+
+    <div class="docs-section" id="motivation">
+
+        <center>
+            <h1 class="navbar-heading"> <b>Plausible Novel Views Do Not Always Guarantee Accurate Depth
+                    Estimation</b></h1>
+        </center>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+                    Neural scene renderings have shown great potential in parameterizing complex 3D scenes as a
+                    neural network
+                    by 1) mapping 5D coordinates to RGB values and densities using NeRF or 2) image-based view
+                    synthesis.
+
+                    <br><br>
+
+                    While the synthesized views are plausible and seemingly satisfactory,
+                    they often suffer from inaccurate correspondence modeling with ground-truth 3D scenes as shown in
+                    depth estimates.
+                    We perform the same metric depth estimation experiments as above with the existing video nerfs of
+                    <a href="https://arxiv.org/abs/2011.12948">Nerfies</a> and <a
+                        href="https://arxiv.org/abs/2106.13228">HyperNeRF</a>.
+                    The color bar on the right is in meters (m).
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <center>
+
+            <div class="video-person-container-smaller">
+
+
+                <div class="video-caption-container">
+                    <div class="person-video-smaller">
+                        <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                            src="resources/mochi/nerfies.mp4"></video>
+                        <!-- <p><b>Nerfies</b></p> -->
+                    </div>
+
+                    <div class="person-video-smaller">
+                        <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                            src="resources/mochi/nerfies_d.mp4"></video>
+                    </div>
+
+                    <p class="captionn"><b>Nerfies</b></p>
+
+                </div>
+
+                <div class="video-caption-container">
+
+                    <div class="person-video-smaller">
+                        <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                            src="resources/mochi/hypernerf.mp4"></video>
+                        <!-- <p><b>HyperNeRF</b></p> -->
+                    </div>
+
+                    <div class="person-video-smaller">
+                        <video autobuffer="" muted="" autoplay="" webkit-playsinline="" playsinline="" loop=""
+                            src="resources/mochi/hypernerf_d.mp4"></video>
+                    </div>
+                    <p class="captionn"><b>HyperNeRF</b></p>
+
+                </div>
+
+            </div>
+
+        </center>
+
+        <br><br><br>
+        <hr>
+        <br>
+        <br><br>
+
+        <center>
+            <h1>Inaccurately Inferred Geomtry due to the Failure of Correpondence Matching</h1>
+
+            <br>
+
+            <table align=center width=1500px>
+                <tr>
+                    <td style="text-align:justify;">
+
+                        Moreover, we find that existing image-based neural rendering approaches can easily
+                        prioritize
+                        the simpler task of blending colors using features obtained from contextual views
+                        over the more complex task of establishing correspondence between sampled contextual
+                        features along rays in 3D space.
+                        This occurs because image-based neural rendering operated in 2D-pixel space often lacks a
+                        comprehensive understanding of the 3D scene,
+                        leading to a preference for color blending over accurate correspondence matching of 3D
+                        points,
+                        where depth estimates aligned with camera poses suggest that inferred geometry could be
+                        interpreted as correspondence matching points.
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ibrnet.png" width="1000">
+            </div>
+        </center>
+
+        <br><br>
+
+        <table align=center width=1500px>
+            <tr>
+                <td style="text-align:justify;">
+
+                    Illustration of depth estimates and corresponding synthesized RGB images
+                    from <a href="https://arxiv.org/abs/2102.13090">IBRNet</a>.
+                    The color bar on the right side of the depth maps indicates the depth scale in meters.
+                    Additionally, the index value with the largest predicted density weight
+                    from <a href="https://arxiv.org/abs/2102.13090">IBRNet</a> is shown (right),
+                    and the color bar indicates the sample index in the range of 0 to 127.
+
+                    As shown in above figure, <a href="https://arxiv.org/abs/2102.13090">IBRNet</a>
+                    typically assigns the highest weight to the last index in the
+                    sample along the ray.
+                    This phenomenon occurs primarily
+                    when <a href="https://arxiv.org/abs/2102.13090">IBRNet</a> struggles to identify correspondences
+                    between context features derived solely
+                    from image encoders, especially in textureless regions (e.g., walls, flat surfaces).
+                    We conjecture that this happens because <a href="https://arxiv.org/abs/2102.13090">IBRNet</a>'s
+                    primary focus is on plausible view synthesis
+                    rather than accurate depth estimation.
+                    Such a bias manifests itself in the following ways: objects that are predicted to be farther
+                    away and thus to have greater depth tend to show only small pixel shifts across different
+                    viewpoints, even with significant changes in camera perspective; on the other hand, objects that
+                    are perceived to be closer show pronounced pixel movement within the images, even with minimal
+                    changes in camera angle. Thus, when optimizing image-based neural rendering networks for color
+                    image synthesis, there is a strong bias toward synthesizing images in which the relative motion
+                    of objects matches their expected real-world behavior.
+                    This prioritizes visual realism at the expense of accurate depth estimation,
+                    especially in the absence of explicit geometric modeling such as image-based view synthesis.
+
+
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <hr>
+        <br>
+        <br><br>
+
+        <center>
+            <h1>Accurately Inferred Geomtry with CADS</h1>
+
+            <br>
+            <div class="video-comp-container">
+                <img id="overview" src="resources/ours.png" width="1000">
+            </div>
+
+            <br><br>
+
+            <table align=center width=1500px>
+                <tr>
+                    <td style="text-align:justify;">
+    
+                        Illustration of depth estimates and corresponding synthesized RGB images from 
+                        our method, CADS. 
+                        The color bar on the right side of the depth maps indicates the depth scale in meters. 
+                        Probability and temperature are also visualized.
+
+    
+                    </td>
+                </tr>
+            </table>
+
+
+        </center>
+
+
+    </div>
+
+    <br><br>
+    <!-- <hr> -->
+    <br><br>
+
+    <script>
+        // Select all video elements
+        const videos = document.querySelectorAll('.video-container-iphone video');
+
+        // Array to hold boolean values for each video's readiness
+        let canPlay = new Array(videos.length).fill(false);
+
+        // Function to check all videos' readiness and play them if all are ready
+        function checkAndPlayAll() {
+            if (canPlay.every(status => status)) { // Check if all videos are ready
+                videos.forEach(video => {
+                    video.play();
+                });
+            }
+        }
+
+        // Assign event listeners to each video
+        videos.forEach((video, index) => {
+            video.addEventListener('canplaythrough', () => {
+                canPlay[index] = true; // Update readiness status
+                checkAndPlayAll(); // Check if all videos are ready and play them
+            });
+        });
+    </script>
+
+</body>
+
+</html>
