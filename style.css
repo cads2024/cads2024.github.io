@@ -504,11 +504,17 @@ figure.zoom img {
 }
 
 .video-caption-container p {
-    margin: 0 10px;
+    /* margin: 0 10px; */
+    margin-top: 20px;
+}
+
+.video-caption-subblock {
+    /* margin: 0 10px; */
+    display: flex;
 }
 
 .video-caption-container {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: flex-end; /* Align items to the bottom */
     text-align: center; /* Center text horizontally */
