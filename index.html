@@ -233,12 +233,12 @@
 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title style="">Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D</title>
+    <title style="">Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D Space</title>
     <meta property="og:image" content="resources/overview.png" />
     <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
     <!-- <meta property="og:video" content="resources/video/teaser/teaser.mp4"> -->
     <meta property="og:title"
-        content="Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D" />
+        content="Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D Space" />
     <meta property="og:description"
         content="Consistent depth estimation w.r.t the 3D scene where given a stream of images exist" />
 
@@ -264,7 +264,7 @@
     <center>
         <span style="font-size:40px; color:#000;" width=1500px>
             <b>
-                Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D
+                Consistent Absolute Depth Estimation via Coordinated Feature Synthesis in 3D Space
             </b>
         </span>
 
@@ -301,23 +301,21 @@
                     We are interested in achieving spatially accurate and 
                     temporally consistent absolute depth estimates only from a stream of 2D RGB images.
                     Despite the success of recent depth estimation methods, 
-                    we find that the task remains challenging with existing approaches. 
+                    such task remains challenging with existing approaches. 
                     This is because they still operate in 2D-pixel space or struggle to encode entire scenes, 
                     thus limiting their use in various real-world captures of complex scenes.
-                    To address this, we propose a new paradigm, 
-                    which casts depth estimation as a feature synthesis problem in 3D space.
+                    To address this, we propose a new paradigm that casts depth estimation as a feature synthesis problem in 3D space.
                     Specifically, we first construct scene features with twofold rescaling, 
-                    minimizing scale ambiguity and enhancing consistency between context features.
-                    Then, using enriched scene features, 
-                    we perform feature matching directly in 3D with our new transformer architecture, 
+                    minimizing scale ambiguity and enhancing consistency between scene features.
+                    Then, using enriched contextual scene features, 
+                    we perform feature matching directly in 3D space with our new transformer architecture, 
                     which includes three-way factorized attention facilitating geometric locality.
                     Moreover, to avoid reliance on explicit geometry modeling, 
                     we render depth maps using ordinal rendering that respects the nature of 3D spaces.
                     We perform extensive comparisons on casually captured scenes from various real-world datasets 
-                    and significantly outperform previous work.
-                    Results highlight our method as a novel framework for 
-                    consistent dense depth estimation at arbitrary camera angles 
-                    by imagining the 3D worlds existing in given images.
+                    and our framework significantly outperforms previous work.
+                    Results highlight our method as a novel framework for consistent dense depth estimation 
+                    at arbitrary camera angles by imagining the 3D worlds existing in given images.
                 </td>
             </tr>
         </table>
@@ -341,7 +339,7 @@
                 <tr>
                     <td style="text-align:justify;">
                         CADS synthesizes a dense depth map and corresponding RGB image at <em>arbitrary camera
-                            angles</em> using a stream of 2D RGB images as context features.
+                            angles</em> using a stream of 2D RGB images as scene features.
                         Such an accurate depth prediction is enabled by three main components.
                         First, CADS rescales each depth estimate of the context views obtained from the
                         single-image depth estimation network to make them exist in the 3D world
@@ -350,7 +348,7 @@
                         Then, these rescaled depth features with image features are fed into our three-way factorized
                         transformers
                         that decompose the features along view, ray, and patch to efficiently find the correspondence
-                        between the context features.
+                        between the scene features.
                         Finally, CADS renders a dense depth map without explicit proxy geometry by taking into
                         account the sequential nature of a ray.
                         By doing so, CADS successfully imagines spatially accurate and temporally consistent
